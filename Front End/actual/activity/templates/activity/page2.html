@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+
+.hero-image {
+  {% load static %}
+  background-image: url("{% static "activity/mit2.jpeg" %}");
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.hero-text {
+  padding: 50px;
+  
+  
+
+  color: black;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+  
+.top-left {
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+
+.top-right {
+    position: absolute;
+    top: 200px;
+    right: 400px;
+}
+
+.bottom {
+    position: absolute;
+    top: 500px;
+    right: 650px;
+}
+
+
+</style>
+</head>
+<body class="body">
+
+<div class="hero-image">
+	<div class="hero-text">
+		<form action="/activity/page3/" method="GET">
+			{% csrf_token %}
+		<div class="container">
+			<center><h1>Recognizing Set of Human Activities<br> from Video Dataset </h1></center>
+			<div class="top-left"><h2>TEAM MEMBERS</h2>
+		
+			
+				<h3>Akash Hegde<br>
+				Akshay Sudhir Hulekal<br>
+				Mithun Bharadwaj B V<br>
+				Hitesh B Rao<br></h3>
+			</div>
+			
+			<div class="top-right"><h2>PROJECT GUIDE</h2>
+				<h3>Dr. M V Sudhamani<br>
+				Professor & HoD<br>
+				Dept. of ISE<br></h3>
+			</div>
+			
+			<div class="bottom">
+				<input type="submit" value="NEXT" style="width: 6em; height: 3em; font-weight: bold; font-size: 14px">
+			</div>
+			
+		</div>
+				  
+			    
+		</form>       
+	
+	</div>
+</div>
+
+</body>
+</html>

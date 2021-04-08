@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+
+.hero-image {
+  {% load static %}
+  background-image: url("{% static "activity/mit1.jpeg" %}");
+  height: 100%;
+  background-position: 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.hero-text {
+  text-align: bottom;
+  position: absolute;
+  top: 95%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-image">
+  <div class="hero-text">
+	<form action="/activity/page2/" method="GET">
+        {% csrf_token %}
+       <input type="submit" value="ENTER" style="width: 6em; height: 3em; font-weight: bold; font-size: 14px">
+	</form>
+  </div>
+</div>
+
+
+</body>
+</html>

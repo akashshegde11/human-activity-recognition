@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+	
+}
+
+.hero-image {
+ {% load static %}
+  background-image: url("{% static "activity/mit2.jpeg" %}");
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.hero-text {
+  padding: 50px;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+<body class="body">
+
+<div class="hero-image">
+	<div class="hero-text">
+	  <br>
+	<center>
+	  <h1>Recognizing Set of Human Activities<br> from Video Dataset </h1>
+	  <br>
+
+<form action="/activity/takeinput/" method="POST">
+	{% csrf_token %}
+  <div class="form-group">
+    <br><h3>Input Training Dataset Parameters</h3>
+    From:<input type="number" name="training1" min="1" max="25" style="width: 6em"> To:<input type="number" name="training2" min="1" max="25" style="width: 6em">
+	<br><h3>Input Testing Dataset Parameters</h3>
+    From:<input type="number" name="test1" min="1" max="25" style="width: 6em"> To:<input type="number" name="test2" min="1" max="25" style="width: 6em">
+	<br><h3>Epochs</h3>
+    <input type="number" name="epoch" style="width: 6em">
+  </div>
+    
+	<br><div><input type="submit" value="SUBMIT" style="width: 6em; height: 3em; font-weight: bold; font-size: 14px"></div>
+</form>
+
+	</center>
+	</div>
+</div>
+
+</body>
+</html>

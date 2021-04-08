@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+	
+}
+
+.hero-image {
+ {% load static %}
+  background-image: url("{% static "activity/mit2.jpeg" %}");
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.hero-text {
+  padding: 50px;
+  position: relative;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+<body class="body">
+
+<div class="hero-image">
+	<div class="hero-text">
+	
+	<form action="/activity/takeinput/" method="GET">
+		{% csrf_token %}
+	  <br>
+	<center>
+	  <h1>Recognizing Set of Human Activities<br> from Video Dataset </h1>
+	  <br>
+	  
+		<h2>Description</h2>
+		<p style="text-align:justify">Human Activity Recognition deals with educating computer or a machine to recognize human activities 
+		according to given specifications. The issue of human activity recognition is a very important problem in 
+		computer vision. The recent technological advancement in deep learning has provided countless possibilities
+		in solving this problem. The aim of this project is to implement a state-of-the-art video feature 
+		extraction on the KTH Dataset and train a model to perform human activity recognition, using deep learning
+		techniques.
+		</p><br>
+		<h2>About the Dataset</h2>
+		<p style="text-align:justify">The part of the problem that makes activity recognition unpredictable is the
+		innumerable ways in which humans think in order to accomplish a given task. For this, there is a need for 
+		huge number of video instances in the form of a dataset. This is an endless and laborious task, but there 
+		is always a particular pattern in which events occur and a basic set of rules that have to be followed. An
+		attempt is made to extract these loopholes and provide favourable results.
+	This project aims to conduct human activity recognition on the KTH Dataset using a combined neural network 
+	approach. The current video database containing six types of human actions (walking, jogging, running, boxing,
+	hand waving and hand clapping) performed several times by 25 subjects in four different scenarios: outdoors 
+	s1, outdoors with scale variation s2, outdoors with different clothes s3 and indoors s4 as illustrated below.
+	Currently the database contains 2391 sequences. All sequences were taken over homogeneous backgrounds with a 
+	static camera with 25fps frame rate. The sequences were down-sampled to the spatial resolution of 160x120 
+	pixels and have a length of four seconds in average.
+	All sequences are stored using AVI file format and are available on-line (DIVX-compressed version). 
+	Uncompressed version is available on demand. There are 25x6x4=600 video files for each combination of 25 
+	subjects, 6 actions and 4 scenarios. Each file contains about four sub-sequences used as a sequence in our 
+	experiments.
+	<p>  <br>
+  
+		
+       <input type="submit" value="NEXT" style="width: 6em; height: 3em; font-weight: bold; font-size: 14px">
+	</center>
+	</form>
+	</div>
+</div>
+
+</body>
+</html>
